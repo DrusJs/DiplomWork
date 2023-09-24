@@ -88,8 +88,16 @@ body {
     align-items: center;
     gap: 10px;
 }
+
+.section-flex.form {
+    width: 100%;
+}
 .section-flex.column {
     flex-direction: column;
+    width: 100%;
+    max-width: 587px;
+    margin: 0 auto;
+    align-items: flex-start;
 }
 .header-logo {
     
@@ -529,6 +537,7 @@ nav {
     align-items: center;
     list-style: none;
     gap: 90px;
+    white-space: nowrap;
 }
 .footer-nav_item a {
     color: #2B3541;
@@ -557,6 +566,7 @@ nav {
     font-weight: 400;
     line-height: 150%;
     margin-top: 25px;
+    text-align: center;
 }
 
 
@@ -610,6 +620,9 @@ nav {
     .main-text,
     .section-title {
         font-size: 26px;
+    }
+    .about-img {
+        flex-basis: 40%;
     }
 
     .main-description,
@@ -705,8 +718,11 @@ nav {
     .about-img {
         display: none;
     }
+    .footer-email {
+        flex-basis: 80%;
+    }
     .footer-links {        
-        flex-basis: 100%;
+        width: 100%;
         justify-content: space-between;
     }
 }
