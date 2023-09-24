@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GYM</title>
+    <title>FreeFIT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -20,24 +20,26 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <div class="burger-menu">
-        <img src="images/logo.svg" alt="" class="burger-logo">
-        <div class="burger-close"></div>
+    <div class="burger-menu" id="modal">
+        <div class="burger-flex">
+            <img src="images/logo.svg" alt="" class="burger-logo">
+            <div class="burger-close" onclick="closeModal()"></div>
+        </div>
         <ul class="burger-list">
             <li class="burger-list__item">Мероприятия</li>
             <li class="burger-list__item">Расписание</li>
             <li class="burger-list__item">О компании</li>
         </ul>
         <div class="burger-social">
-            <a href="#" class="burger-social__item"></a>
-            <a href="#" class="burger-social__item"></a>
+            <a href="#" class="burger-social__item"><img src="images/IN.svg" alt=""></a>
+            <a href="#" class="burger-social__item"><img src="images/FB.svg" alt=""></a>
         </div>
     </div>
     <header class="header">
         <div class="section-wrapper">
             <div class="section-flex">
                 <a href="#" class="header-logo"><img src="images/logo.svg" alt="" class="logo"></a>
-                <div class="burger"></div>
+                <div class="burger" onclick="openModal()"></div>
                 <nav>
                     <ul class="nav-list">
                         <li class="nav-list__item"><a href="#">Мероприятия</a></li>
@@ -53,35 +55,42 @@
         </div>
     </header>
     <main class="main">
-        <section class="section-wrapper">
+        <section class="section-wrapper fix">
             <h1 class="main-title">онлайн тренировки любой сложности</h1>
             <div class="main-text">&gt;15 тренировок</div>
             <div class="main-container">
                 <div class="main-description">в области спортивной физиологии и нутрициологии</div>
                 <button class="button">узнать подробнее</button>
             </div>
+            <img src="images/mian-bg2x.png" alt="" class="main-bg_img">
             <a class="scroll-down__button"></a>
         </section>
         <section class="section-wrapper">
             <h2 class="section-title">Ближайшие события</h2>
             <div class="events-grid">
                 <div class="events-grid__item">
+                    <div class="bg-gradient"></div>                    
                     <div class="event-date">29.06 - 4.07</div>
                     <h3 class="event-header">Марафон выносливости</h3>
                     <button class="button event-button">записаться</button>
                     <div class="event-type">марафон</div>
+                    <div class="event-add">+</div>
                 </div>
                 <div class="events-grid__item">
+                    <div class="bg-gradient"></div> 
                     <div class="event-date">9.07</div>
                     <h3 class="event-header">Как стать тренером?</h3>
                     <button class="button event-button">записаться</button>
                     <div class="event-type">вебинар</div>
+                    <div class="event-add">+</div>
                 </div>
-                <div class="events-grid__item">
+                <div class="events-grid__item large">
+                    <div class="bg-gradient"></div> 
                     <div class="event-date">15.07</div>
                     <h3 class="event-header">Йога, как стиль жизни</h3>
                     <button class="button event-button">записаться</button>
                     <div class="event-type">вебинар</div>
+                    <div class="event-add">+</div>
                 </div>
             </div>
         </section>
@@ -125,11 +134,15 @@
         </section>
         <section class="section-bg">
             <div class="section-wrapper">
-                <h2 class="section-title circle">Подпишитесь на рассылку</h2>
-                <input type="email" class="input" placeholder="Ваш e-mail">
-                <button class="button">подписаться</button><br>
-                <input type="checkbox" class="checkbox" id="personal">
-                <label for="personal" class="label">Согласен с обработкой <span class="underline">персональных данных</span></label>
+                <div class="section-flex column">
+                    <h2 class="section-title circle">Подпишитесь на рассылку</h2>
+                    <div class="section-flex form">
+                        <input type="email" class="input" placeholder="Ваш e-mail">
+                        <button class="button">подписаться</button>
+                    </div>
+                    <input type="checkbox" class="checkbox" id="personal">
+                    <label for="personal" class="label">Согласен с обработкой <span class="underline">персональных данных</span></label>
+                </div>
             </div>
         </section>
         <section class="section-wrapper">
@@ -139,7 +152,7 @@
                     <div class="section-description">Наша компания является одной из немногих, кто предлагает фитнес услуги онлайн! Оставайтесь с нами и вы сами увидите, что мы проводим не только онлайн-тренировки.</div>
                     <button class="button">Записаться</button>
                 </div>
-                <img src="images/trainer.jpg" alt="">
+                <img class="about-img" src="images/trainer.jpg" alt="">
             </div>
             <img src="" alt="">
             <div class="section-wrapper margin-top">
@@ -180,31 +193,37 @@
                     <a href="#" class="footer-social"><img src="images/FB.svg" alt=""></a>
                 </div>
             </div>
-            <div class="footer-flex">
+            <div class="footer-flex center">
                 <div class="footer-text">© 2022, Все права защищены</div>
-                <div class="footer-text">Сделано в рамках курса учебной платформы You Can Code</div>
+                <div class="footer-text">Сделано в рамках курса учебной платформы <span class="underline">FrontendBlok</span></div>
             </div>
         </div>
     </footer>
 
 
     <script>
-        // Smooth Scroll
+        function openModal() {
+           document.getElementById("modal").style.top = "0px";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.top = "-100vh";
+        }
       
        //const links = document.querySelectorAll(".banner-link");
 
-        for (const link of links) {
-            link.addEventListener("click", clickHandler);
-        }
+        // for (const link of links) {
+        //     link.addEventListener("click", clickHandler);
+        // }
 
-        function clickHandler(e) {
-            e.preventDefault();
-            const href = this.getAttribute("href");
+        // function clickHandler(e) {
+        //     e.preventDefault();
+        //     const href = this.getAttribute("href");
 
-            document.querySelector(href).scrollIntoView({
-                behavior: "smooth"
-            });
-        }
+        //     document.querySelector(href).scrollIntoView({
+        //         behavior: "smooth"
+        //     });
+        // }
     </script>
 </body>
 </html>
