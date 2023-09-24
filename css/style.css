@@ -576,8 +576,8 @@ nav {
         border-bottom: none;
         padding-bottom: 0;
     }
-    .events-grid__item:hover .button {
-        opacity: 0;
+    .events-grid__item .button {
+        display: none;
     }
     .social-links__item:hover,
     .burger-social__item:hover,
@@ -624,7 +624,14 @@ nav {
     .about-img {
         flex-basis: 40%;
     }
-
+    .section-flex.column .section-title {
+        margin: 0 auto;
+    }
+    .section-flex.column .button,
+    .section-flex.column .input {
+        width: 100%;
+        max-width: none;
+    }
     .main-description,
     .event-header,
     .section-date,
@@ -650,7 +657,8 @@ nav {
         gap: 11px 20px;
     }
     .events-grid__item {
-        background-position: 10% 20%;
+        background-position: center center;
+        padding: 20px 28px;
     }
     .events-grid__item.large {
         grid-column: 2 span;
@@ -717,6 +725,10 @@ nav {
 @media (max-width: 600px) {
     .about-img {
         display: none;
+    }  
+    .events-grid__item {
+        padding: 15px;
+        box-sizing: border-box;
     }
     .footer-email {
         flex-basis: 80%;
